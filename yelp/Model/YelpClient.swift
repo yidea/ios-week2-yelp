@@ -55,7 +55,7 @@ class YelpClient: BDBOAuth1SessionManager {
         if (term.utf16Count <= 3) {
             categories(term, completion: completion)
         } else {
-            businesses(term, completion: completion)
+            //businesses(term, completion: completion)
         }
     }
     
@@ -70,7 +70,7 @@ class YelpClient: BDBOAuth1SessionManager {
     }
     
     
-    func businesses(term:String, completion: (data: Array<String>) -> Void) -> Void {
+    func businesses(term:String, completion: (data: Array<Business>) -> Void) -> Void {
         
         let params = [
             "term": term,
@@ -80,10 +80,31 @@ class YelpClient: BDBOAuth1SessionManager {
         GET("search", parameters: params,
             success: { (task: NSURLSessionDataTask!, data: AnyObject!) in
                 var businesses = (data as NSDictionary)["businesses"] as NSArray
-                var data = [String]()
+                var data = [Business]()
+                var keys = BusinessKeys()
                 for item in businesses {
-                    if let biz = item as? NSDictionary {
-                        data.append(biz["name"] as String)
+                    if let hash = item as? Dictionary<String, NSObject> {
+                        
+                        var categories = [String]()
+                        //extract categories from nested arrays
+                        let catArray = hash[keys.categoriesKey]! as [NSArray]
+                        for catSubarray in catArray {
+                            categories.append(catSubarray[0] as NSString)
+                        }
+                        
+                        var business = Business(
+                            id: hash[keys.idKey]! as String,
+                            name: hash[keys.nameKey]! as String,
+                            phone: hash[keys.phoneKey] as? NSString,
+                            isClosed: hash[keys.isClosedKey]! as Bool,
+                            ratingImageUrl: hash[keys.ratingImageUrlKey]! as String,
+                            reviewCount: hash[keys.reviewCountKey]! as Int,
+                            snippetImageUrl: hash[keys.snippetImageUrlKey] as? NSString,
+                            rating: hash[keys.ratingKey]! as Double,
+                            categories: categories,
+                            thumbUrl: hash[keys.thumbUrlKey] as? NSString
+                        )
+                        data.append(business)
                     }
                 }
                 completion(data: data)

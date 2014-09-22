@@ -12,7 +12,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet var tableView: UITableView!
-    var searchResults = ["Love", "Me"]
+    var searchResults = [Business]()
     var searchController = UISearchController()
     let yelpClient = YelpClient()
     var currentSearchTerm = ""
@@ -22,6 +22,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         self.searchController = ({
             let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
@@ -66,13 +67,14 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchResultCell", forIndexPath: indexPath) as SearchResultsCell
-        cell.titleCell.text = searchResults[indexPath.row]
+        let biz = searchResults[indexPath.row]
+        cell.forBusiness(biz)
         return cell
     }
     
     func forSearchTerm(searchTerm: String) {
-        //searchResults.removeAll(keepCapacity: false)
-        yelpClient.businesses(searchTerm, { (data: Array<String>) in
+        searchResults.removeAll(keepCapacity: false)
+        yelpClient.businesses(searchTerm, { (data: Array<Business>) in
             self.searchResults += data
             println(self.searchResults)
             self.tableView.reloadData()

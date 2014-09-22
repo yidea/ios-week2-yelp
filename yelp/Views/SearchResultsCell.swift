@@ -10,7 +10,12 @@ import UIKit
 
 class SearchResultsCell: UITableViewCell {
 
+    @IBOutlet weak var thumb: UIImageView!
     @IBOutlet weak var titleCell: UILabel!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var stars: UIImageView!
+    @IBOutlet weak var reviews: UILabel!
+    @IBOutlet weak var categories: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +26,16 @@ class SearchResultsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func forBusiness(biz: Business) {
+        titleCell.text = biz.name + " SUPER LONG TEXT FIELD"
+        reviews.text = biz.reviewFormatted
+        categories.text = biz.categoriesFormatted
+        if biz.thumbUrl != nil {
+            thumb.setImageWithURL(NSURL(string: biz.thumbUrl!))
+        }
+        stars.setImageWithURL(NSURL(string: biz.ratingImageUrl))
     }
 
 }

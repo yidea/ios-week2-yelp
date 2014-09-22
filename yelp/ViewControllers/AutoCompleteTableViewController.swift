@@ -51,9 +51,9 @@ class AutoCompleteTableViewController: UITableViewController, UISearchResultsUpd
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        println(searchController.searchBar.text)
         viewController.forSearchTerm(searchController.searchBar.text)
         tableView.hidden = true
-        println(__FUNCTION__)
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
