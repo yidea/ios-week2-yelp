@@ -53,27 +53,43 @@ class YelpClient: BDBOAuth1SessionManager {
     func search(term:String, completion: (data: Array<String>) -> Void) -> Void {
         
         if (term.utf16Count <= 3) {
-            var results: [String] = []
-            for cat in categories {
-                if startsWith(cat, term) {
-                    results.append(cat)
-                }
-            }
-            completion(data: results)
+            categories(term, completion: completion)
         } else {
-            let params = [
-                "term": term,
-                "location": "San Francisco"
-            ]
-            
-            GET("search", parameters: params,
-                success: { (task: NSURLSessionDataTask!, data: AnyObject!) in
-                    var businesses: AnyObject? = (data as NSDictionary)["businesses"]
-                    println(businesses)
-                }, failure: { (task: NSURLSessionDataTask!, error: NSError!) in
-                    println(error)
-            })
+            businesses(term, completion: completion)
         }
+    }
+    
+    func categories(term:String, completion: (data: Array<String>) -> Void) -> Void {
+        var results: [String] = []
+        for cat in categories {
+            if startsWith(cat, term) {
+                results.append(cat)
+            }
+        }
+        completion(data: results)
+    }
+    
+    
+    func businesses(term:String, completion: (data: Array<String>) -> Void) -> Void {
+        
+        let params = [
+            "term": term,
+            "location": "San Francisco"
+        ]
+        
+        GET("search", parameters: params,
+            success: { (task: NSURLSessionDataTask!, data: AnyObject!) in
+                var businesses = (data as NSDictionary)["businesses"] as NSArray
+                var data = [String]()
+                for item in businesses {
+                    if let biz = item as? NSDictionary {
+                        data.append(biz["name"] as String)
+                    }
+                }
+                completion(data: data)
+            }, failure: { (task: NSURLSessionDataTask!, error: NSError!) in
+                println(error)
+        })
     }
 }
 

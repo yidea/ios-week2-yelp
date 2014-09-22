@@ -8,13 +8,14 @@
 
 import UIKit
 
-class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate {
 
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet var tableView: UITableView!
-    var countryArray = ["Australia", "Singapore", "Malaysia", "United States", "Germany", "United Kingdom", "Kenya"]
-    var searchArray = [String]()
-    var countrySearchController = UISearchController()
+    var searchResults = ["Love", "Me"]
+    var searchController = UISearchController()
+    let yelpClient = YelpClient()
+    var currentSearchTerm = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +23,26 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.countrySearchController = ({
+        self.searchController = ({
             let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let autocompleteController = storyBoard.instantiateViewControllerWithIdentifier("AutoCompleteViewController") as AutoCompleteTableViewController
+            autocompleteController.viewController = self
             let controller = UISearchController(searchResultsController: autocompleteController)
             controller.searchResultsUpdater = autocompleteController
             controller.hidesNavigationBarDuringPresentation = false
             controller.dimsBackgroundDuringPresentation = false
-            controller.definesPresentationContext = true
+            controller.definesPresentationContext = false
+            controller.searchBar.delegate = autocompleteController
             controller.searchBar.frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.tableView.frame), 44.0)
-            self.tableView.tableHeaderView = controller.searchBar
+            //self.tableView.tableHeaderView = controller.searchBar
+            self.navItem.titleView = controller.searchBar
+            controller.delegate = self
             return controller
         })()
+    }
+    
+    func didDismissSearchController(searchController: UISearchController) {
+        println(searchController.searchBar.text)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,13 +61,22 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return countryArray.count
+        return searchResults.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchResultCell", forIndexPath: indexPath) as SearchResultsCell
-        cell.titleCell.text = self.countryArray[indexPath.row]
+        cell.titleCell.text = searchResults[indexPath.row]
         return cell
+    }
+    
+    func forSearchTerm(searchTerm: String) {
+        //searchResults.removeAll(keepCapacity: false)
+        yelpClient.businesses(searchTerm, { (data: Array<String>) in
+            self.searchResults += data
+            println(self.searchResults)
+            self.tableView.reloadData()
+        })
     }
 
     /*

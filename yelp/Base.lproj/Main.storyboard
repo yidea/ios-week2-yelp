@@ -8,7 +8,7 @@
         <!--Search Results View Controller-->
         <scene sceneID="NJT-Kg-Mg2">
             <objects>
-                <tableViewController id="RIy-Ag-SUc" customClass="SearchResultsViewController" customModule="yelp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchResultsViewController" id="RIy-Ag-SUc" customClass="SearchResultsViewController" customModule="yelp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Oi8-h4-um7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

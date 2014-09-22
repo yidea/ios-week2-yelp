@@ -8,35 +8,26 @@
 
 import UIKit
 
-class AutoCompleteTableViewController: UITableViewController, UISearchResultsUpdating {
+class AutoCompleteTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
 
     var searchArray = [String]()
     let yelpClient = YelpClient()
+    var viewController = SearchResultsViewController()
+    var searchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
         return searchArray.count
     }
 
@@ -48,27 +39,38 @@ class AutoCompleteTableViewController: UITableViewController, UISearchResultsUpd
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let searchTerm = searchArray[indexPath.row]
+        searchController.searchBar.text = searchTerm
+        println(__FUNCTION__)
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        tableView.hidden = false
+        println(__FUNCTION__)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        viewController.forSearchTerm(searchController.searchBar.text)
+        tableView.hidden = true
+        println(__FUNCTION__)
+    }
+    
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        var searchTerm = searchController.searchBar.text
+        println(__FUNCTION__)
         searchArray.removeAll(keepCapacity: false)
-        if (searchTerm != "") {
-            yelpClient.search(searchTerm, { (data: Array<String>) in
-                self.searchArray += data
-                self.tableView.reloadData()
-            })
+        if let indexPath = tableView.indexPathForSelectedRow() {
+            tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        } else {
+            self.searchController = searchController
+            var searchTerm = searchController.searchBar.text
+            
+            if (searchTerm != "") {
+                yelpClient.search(searchTerm, { (data: Array<String>) in
+                    self.searchArray += data
+                })
+            }
         }
-//        searchArray.removeAll(keepCapacity: false)
-        
-//        for country:String in countryArray
-//        {
-//            var searchText = searchController.searchBar.text
-//            
-//            if NSString(string: country.lowercaseString).containsString(searchText.lowercaseString)
-//            {
-//                searchArray.append(country)
-//            }
-//        }
-//        
-//        tableView.reloadData()
+        self.tableView.reloadData()
     }
 }

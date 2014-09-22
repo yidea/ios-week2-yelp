@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13A73F026C984E58B461A23B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C375D153AB4D9C9F05A9CC /* libPods.a */; };
+		223F010219D05C07003E68CD /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F010119D05C07003E68CD /* Business.swift */; };
 		2246C7F019CE846F00C90646 /* YelpCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246C7EF19CE846F00C90646 /* YelpCredentials.swift */; };
 		2246C7F219CE853400C90646 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246C7F119CE853400C90646 /* YelpClient.swift */; };
 		2246C7FD19CFCF3500C90646 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246C7FC19CFCF3500C90646 /* SearchResultsViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		223F010119D05C07003E68CD /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Business.swift; path = Model/Business.swift; sourceTree = "<group>"; };
 		2246C7E919CE810B00C90646 /* yelp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yelp-Bridging-Header.h"; sourceTree = "<group>"; };
 		2246C7EF19CE846F00C90646 /* YelpCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YelpCredentials.swift; path = Model/YelpCredentials.swift; sourceTree = "<group>"; };
 		2246C7F119CE853400C90646 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YelpClient.swift; path = Model/YelpClient.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				2246C7EF19CE846F00C90646 /* YelpCredentials.swift */,
 				2246C7F119CE853400C90646 /* YelpClient.swift */,
+				223F010119D05C07003E68CD /* Business.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				22EAA28019CFF79800E14C0B /* SearchResultsCell.swift in Sources */,
 				2246C7F019CE846F00C90646 /* YelpCredentials.swift in Sources */,
 				2246C7FD19CFCF3500C90646 /* SearchResultsViewController.swift in Sources */,
+				223F010219D05C07003E68CD /* Business.swift in Sources */,
 				7DCE95E219C92C44003EE8AD /* AppDelegate.swift in Sources */,
 				22EAA28419D0037F00E14C0B /* AutoCompleteCell.swift in Sources */,
 			);
