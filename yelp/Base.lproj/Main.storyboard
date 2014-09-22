@@ -41,7 +41,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZAz-Fy-ypH">
-                                            <rect key="frame" x="80" y="25" width="84" height="17"/>
+                                            <rect key="frame" x="80" y="26" width="84" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="Edh-F1-Uav"/>
                                                 <constraint firstAttribute="width" constant="84" id="yXD-GS-jia"/>
@@ -57,12 +57,12 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 Elm St." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cI7-BD-rjj">
-                                            <rect key="frame" x="80" y="44" width="61" height="15"/>
+                                            <rect key="frame" x="80" y="45" width="61" height="15"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="128 reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsS-va-Xg6">
-                                            <rect key="frame" x="172" y="26" width="62" height="15"/>
+                                            <rect key="frame" x="172" y="27" width="62" height="15"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -72,16 +72,16 @@
                                         <constraint firstItem="cI7-BD-rjj" firstAttribute="leading" secondItem="9qr-XL-tA2" secondAttribute="trailing" constant="8" id="1Qb-jR-mP6"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="X2H-Df-rIb" secondAttribute="bottom" constant="-6" id="3eB-aQ-1Bz"/>
                                         <constraint firstItem="9HB-Qz-OOf" firstAttribute="top" secondItem="U43-sG-4wF" secondAttribute="topMargin" constant="1" id="8kP-QI-S81"/>
-                                        <constraint firstItem="X2H-Df-rIb" firstAttribute="top" secondItem="ZAz-Fy-ypH" secondAttribute="bottom" constant="14" id="F5t-ed-US7"/>
+                                        <constraint firstItem="X2H-Df-rIb" firstAttribute="top" secondItem="ZAz-Fy-ypH" secondAttribute="bottom" constant="13" id="F5t-ed-US7"/>
                                         <constraint firstItem="gKT-h0-Sfw" firstAttribute="top" secondItem="U43-sG-4wF" secondAttribute="topMargin" constant="-3" id="Kfq-aj-DqM"/>
                                         <constraint firstItem="9HB-Qz-OOf" firstAttribute="trailing" secondItem="U43-sG-4wF" secondAttribute="trailingMargin" id="O2J-ol-QaR"/>
                                         <constraint firstItem="9qr-XL-tA2" firstAttribute="leading" secondItem="U43-sG-4wF" secondAttribute="leadingMargin" id="U31-Fk-VuE"/>
                                         <constraint firstItem="cI7-BD-rjj" firstAttribute="top" secondItem="SsS-va-Xg6" secondAttribute="bottom" constant="3" id="UM3-MK-tj7"/>
                                         <constraint firstItem="9qr-XL-tA2" firstAttribute="top" secondItem="U43-sG-4wF" secondAttribute="topMargin" id="dgx-op-9Bs"/>
                                         <constraint firstItem="ZAz-Fy-ypH" firstAttribute="leading" secondItem="9qr-XL-tA2" secondAttribute="trailing" constant="8" id="jMb-ZJ-YP2"/>
-                                        <constraint firstItem="ZAz-Fy-ypH" firstAttribute="top" secondItem="gKT-h0-Sfw" secondAttribute="bottom" constant="1" id="nUC-OM-CGR"/>
+                                        <constraint firstItem="ZAz-Fy-ypH" firstAttribute="top" secondItem="gKT-h0-Sfw" secondAttribute="bottom" constant="2" id="nUC-OM-CGR"/>
                                         <constraint firstItem="X2H-Df-rIb" firstAttribute="leading" secondItem="9qr-XL-tA2" secondAttribute="trailing" constant="8" id="p55-Li-DQm"/>
-                                        <constraint firstItem="SsS-va-Xg6" firstAttribute="top" secondItem="gKT-h0-Sfw" secondAttribute="bottom" constant="2" id="rY8-Ld-Y4Z"/>
+                                        <constraint firstItem="SsS-va-Xg6" firstAttribute="top" secondItem="gKT-h0-Sfw" secondAttribute="bottom" constant="3" id="rY8-Ld-Y4Z"/>
                                         <constraint firstItem="gKT-h0-Sfw" firstAttribute="leading" secondItem="9qr-XL-tA2" secondAttribute="trailing" constant="8" id="t6D-L6-XS7"/>
                                         <constraint firstItem="SsS-va-Xg6" firstAttribute="leading" secondItem="ZAz-Fy-ypH" secondAttribute="trailing" constant="8" id="tJd-cb-dsW"/>
                                         <constraint firstItem="9HB-Qz-OOf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gKT-h0-Sfw" secondAttribute="trailing" constant="10" id="vBE-MV-KX9"/>
