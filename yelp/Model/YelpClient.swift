@@ -68,12 +68,22 @@ class YelpClient: BDBOAuth1SessionManager {
     }
     
     
-    func businesses(term:String, completion: (data: Array<Business>) -> Void) -> Void {
+    func businesses(term:String, filters: FilterRepository?, completion: (data: Array<Business>) -> Void) -> Void {
         
-        let params = [
+        var params = [
             "term": term,
             "location": "San Francisco"
         ]
+        
+        if filters != nil {
+            for f in filters!.filters {
+                if f.selected && f.supported {
+                    params[f.key] = f.value
+                }
+            }
+        }
+        
+        println(params)
         
         GET("search", parameters: params,
             success: { (task: NSURLSessionDataTask!, data: AnyObject!) in

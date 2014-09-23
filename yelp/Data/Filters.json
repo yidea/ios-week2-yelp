@@ -5,11 +5,31 @@
       "filters":[
          {
             "name":"Open Now",
-            "type":"CheckboxFilter"
+            "type":"CheckboxFilter",
+            "key":"",
+            "value":"",
+            "supported":false
          },
          {
             "name":"Hot and New",
-            "type":"CheckboxFilter"
+            "type":"CheckboxFilter",
+            "key":"",
+            "value":"",
+            "supported":false
+         },
+         {
+            "name":"Offering a Deal",
+            "type":"CheckboxFilter",
+            "key":"deals_filter",
+            "value":"true",
+            "supported":true
+         },
+         {
+            "name":"Delivery",
+            "type":"CheckboxFilter",
+            "key":"",
+            "value":"",
+            "supported":false
          }
       ]
    },
@@ -19,19 +39,31 @@
       "filters":[
          {
             "name":"0.3 miles",
-            "type":"SelectFilter"
+            "type":"SelectFilter",
+            "key":"radius_filter",
+            "value":"482",
+            "supported":true
          },
          {
             "name":"1 mile",
-            "type":"SelectFilter"
+            "type":"SelectFilter",
+            "key":"radius_filter",
+            "value":"1609",
+            "supported":true
          },
          {
             "name":"5 miles",
-            "type":"SelectFilter"
+            "type":"SelectFilter",
+            "key":"radius_filter",
+            "value":"8046",
+            "supported":true
          },
          {
             "name":"20 miles",
-            "type":"SelectFilter"
+            "type":"SelectFilter",
+            "key":"radius_filter",
+            "value":"32186",
+            "supported":true
          }
       ]
    },
@@ -41,19 +73,31 @@
       "filters":[
          {
             "name":"Best Match",
-            "type":"SelectFilter"
+            "type":"SelectFilter",
+            "key":"sort",
+            "value":"0",
+            "supported":true
          },
          {
             "name":"Distance",
-            "type":"SelectFilter"
+            "type":"SelectFilter",
+            "key":"sort",
+            "value":"1",
+            "supported":true
          },
          {
             "name":"Rating",
-            "type":"SelectFilter"
+            "type":"SelectFilter",
+            "key":"sort",
+            "value":"2",
+            "supported":true
          },
          {
             "name":"Most Reviewed",
-            "type":"SelectFilter"
+            "type":"SelectFilter",
+            "key":"sort",
+            "value":"3",
+            "supported":false
          }
       ]
    },
@@ -63,11 +107,31 @@
       "filters":[
          {
             "name":"Online Ordering",
-            "type":"CheckboxFilter"
+            "type":"CheckboxFilter",
+            "key":"",
+            "value":"",
+            "supported":false
          },
          {
-            "name":"Deals",
-            "type":"CheckboxFilter"
+            "name":"Take-out",
+            "type":"CheckboxFilter",
+            "key":"",
+            "value":"",
+            "supported":false
+         },
+         {
+            "name":"Beer and Wine Only",
+            "type":"CheckboxFilter",
+            "key":"",
+            "value":"",
+            "supported":false
+         },
+         {
+            "name":"Good for Kids",
+            "type":"CheckboxFilter",
+            "key":"",
+            "value":"",
+            "supported":false
          }
       ]
    }

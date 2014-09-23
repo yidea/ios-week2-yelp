@@ -25,7 +25,7 @@
                                         <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <segue destination="KQ4-ln-rY6" kind="presentation" modalTransitionStyle="coverVertical" id="OaR-nN-MOF"/>
+                                        <segue destination="KQ4-ln-rY6" kind="presentation" identifier="FilterOptions" modalTransitionStyle="coverVertical" id="OaR-nN-MOF"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -221,7 +221,11 @@
                                 <action selector="onCancelClick:" destination="JPq-2E-k6B" id="qgM-2P-fur"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="4Sw-sX-ALX"/>
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="4Sw-sX-ALX">
+                            <connections>
+                                <action selector="onSearchClick:" destination="JPq-2E-k6B" id="CAb-Lj-dge"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="ELl-kr-ECR" id="Raj-7q-9TM"/>
@@ -314,6 +318,7 @@
         <!--Navigation Controller-->
         <scene sceneID="8W8-hb-1fl">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Myb-9o-whU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KQ4-ln-rY6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="agh-X2-K1k">
@@ -325,7 +330,6 @@
                         <segue destination="JPq-2E-k6B" kind="relationship" relationship="rootViewController" id="Vc3-jO-YIh"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Myb-9o-whU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2754" y="584"/>
         </scene>

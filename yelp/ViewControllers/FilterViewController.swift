@@ -12,6 +12,7 @@ class FilterViewController: UITableViewController {
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     let repository = FilterRepository()
+    var completion: ((repository: FilterRepository?) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,9 +87,24 @@ class FilterViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    //will return a nil repository if modal was canceled
+    func forSearch(completion: ((repository: FilterRepository?) -> Void)) {
+        self.completion = completion
+    }
+    
+    @IBAction func onSearchClick(sender: AnyObject) {
+        closeAndCallback(self.repository)
+    }
     
     @IBAction func onCancelClick(sender: UIBarButtonItem) {
+        closeAndCallback(nil)
+    }
+    
+    func closeAndCallback(rep: FilterRepository?) {
         dismissViewControllerAnimated(true, { })
+        if let c = completion {
+            c(repository: rep)
+        }
     }
 
 }

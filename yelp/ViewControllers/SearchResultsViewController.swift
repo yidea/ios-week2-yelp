@@ -74,23 +74,31 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
     
-    func forSearchTerm(searchTerm: String) {
+    func forSearchTerm(searchTerm: String, filters: FilterRepository?) {
         searchResults.removeAll(keepCapacity: false)
-        yelpClient.businesses(searchTerm, { (data: Array<Business>) in
+        yelpClient.businesses(searchTerm, filters: filters, completion: { (data: Array<Business>) in
             self.searchResults += data
             self.tableView.reloadData()
             self.filterBar.hidden = false
         })
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    
+        if segue.identifier == "FilterOptions" {
+            println(segue.sourceViewController)
+            println(segue.destinationViewController)
+            let nc = segue.destinationViewController as UINavigationController
+            let vc = nc.viewControllers[0] as FilterViewController
+            vc.forSearch({ (repo: FilterRepository?) in
+                if repo != nil {
+                    println(self.searchController.searchBar.text)
+                    self.forSearchTerm(self.searchController.searchBar.text, filters: repo)
+                } else {
+                    self.tableView.reloadData()
+                }
+            })
+        }
     }
-    */
 
 }

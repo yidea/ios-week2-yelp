@@ -20,6 +20,9 @@ class FilterBase {
 @objc class Filter : FilterBase {
     var type: String?
     var selected = false
+    var supported = false
+    var key = ""
+    var value = ""
 }
 
 class Section : FilterBase {
@@ -52,6 +55,9 @@ class FilterRepository {
                     for filterHash in filters {
                         let filter = Filter(name: filterHash["name"] as NSString)
                         filter.type = filterHash["type"] as NSString
+                        filter.supported = filterHash["supported"] as Bool
+                        filter.key = filterHash["key"] as NSString
+                        filter.value = filterHash["value"] as NSString
                         section.filters.append(filter)
                     }
                     self.filters += section.filters

@@ -42,22 +42,19 @@ class AutoCompleteTableViewController: UITableViewController, UISearchResultsUpd
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let searchTerm = searchArray[indexPath.row]
         searchController.searchBar.text = searchTerm
-        println(__FUNCTION__)
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         tableView.hidden = false
-        println(__FUNCTION__)
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         println(searchController.searchBar.text)
-        viewController.forSearchTerm(searchController.searchBar.text)
+        viewController.forSearchTerm(searchController.searchBar.text, filters: nil)
         tableView.hidden = true
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        println(__FUNCTION__)
         searchArray.removeAll(keepCapacity: false)
         if let indexPath = tableView.indexPathForSelectedRow() {
             tableView.deselectRowAtIndexPath(indexPath, animated: false)
