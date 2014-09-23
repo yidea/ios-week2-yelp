@@ -12,6 +12,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var filterBar: UIView!
     var searchResults = [Business]()
     var searchController = UISearchController()
     let yelpClient = YelpClient()
@@ -23,6 +24,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
+        filterBar.hidden = true
         
         self.searchController = ({
             let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
@@ -76,8 +78,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         searchResults.removeAll(keepCapacity: false)
         yelpClient.businesses(searchTerm, { (data: Array<Business>) in
             self.searchResults += data
-            println(self.searchResults)
             self.tableView.reloadData()
+            self.filterBar.hidden = false
         })
     }
 

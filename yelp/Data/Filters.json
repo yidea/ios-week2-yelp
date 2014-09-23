@@ -1,0 +1,74 @@
+[
+   {
+      "name":"Most Popular",
+      "isExpansionLocked": true,
+      "filters":[
+         {
+            "name":"Open Now",
+            "type":"CheckboxFilter"
+         },
+         {
+            "name":"Hot and New",
+            "type":"CheckboxFilter"
+         }
+      ]
+   },
+   {
+      "name":"Distance",
+      "isExpansionLocked": false,
+      "filters":[
+         {
+            "name":"0.3 miles",
+            "type":"SelectFilter"
+         },
+         {
+            "name":"1 mile",
+            "type":"SelectFilter"
+         },
+         {
+            "name":"5 miles",
+            "type":"SelectFilter"
+         },
+         {
+            "name":"20 miles",
+            "type":"SelectFilter"
+         }
+      ]
+   },
+   {
+      "name":"Sort By",
+      "isExpansionLocked": false,
+      "filters":[
+         {
+            "name":"Best Match",
+            "type":"SelectFilter"
+         },
+         {
+            "name":"Distance",
+            "type":"SelectFilter"
+         },
+         {
+            "name":"Rating",
+            "type":"SelectFilter"
+         },
+         {
+            "name":"Most Reviewed",
+            "type":"SelectFilter"
+         }
+      ]
+   },
+   {
+      "name":"General Interests",
+      "isExpansionLocked": false,
+      "filters":[
+         {
+            "name":"Online Ordering",
+            "type":"CheckboxFilter"
+         },
+         {
+            "name":"Deals",
+            "type":"CheckboxFilter"
+         }
+      ]
+   }
+]

@@ -21,7 +21,6 @@ class YelpClient: BDBOAuth1SessionManager {
     func populateCategories() {
         var error: NSError?
         var filePath = NSBundle.mainBundle().pathForResource("Categories", ofType: ".json")
-        println(filePath)
         var data = NSData.dataWithContentsOfFile(filePath!, options: nil, error: nil)
         var json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as NSArray
         for item in json {
@@ -29,7 +28,6 @@ class YelpClient: BDBOAuth1SessionManager {
                 categories.append(cat["title"] as String)
             }
         }
-        println(categories)
     }
     
     override init() {
