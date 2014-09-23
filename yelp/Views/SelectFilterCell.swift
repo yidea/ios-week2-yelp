@@ -11,6 +11,7 @@ import UIKit
 @objc class SelectFilterCell: UITableViewCell, FilterViewCell {
 
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var checkIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,7 @@ import UIKit
     
     func forFilter(filter: Filter) {
         name.text = filter.name
+        checkIcon.hidden = !filter.selected
     }
 
 }

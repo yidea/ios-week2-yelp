@@ -22,6 +22,7 @@
 		22EAA28019CFF79800E14C0B /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAA27F19CFF79800E14C0B /* SearchResultsCell.swift */; };
 		22EAA28219CFFF1000E14C0B /* AutoCompleteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAA28119CFFF1000E14C0B /* AutoCompleteTableViewController.swift */; };
 		22EAA28419D0037F00E14C0B /* AutoCompleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAA28319D0037F00E14C0B /* AutoCompleteCell.swift */; };
+		7D2B805119D227BA008A2378 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D2B805019D227BA008A2378 /* Media.xcassets */; };
 		7DCE95E219C92C44003EE8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE95E119C92C44003EE8AD /* AppDelegate.swift */; };
 		7DCE95E719C92C44003EE8AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCE95E519C92C44003EE8AD /* Main.storyboard */; };
 		7DCE95E919C92C44003EE8AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCE95E819C92C44003EE8AD /* Images.xcassets */; };
@@ -56,6 +57,7 @@
 		22EAA28119CFFF1000E14C0B /* AutoCompleteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoCompleteTableViewController.swift; path = ViewControllers/AutoCompleteTableViewController.swift; sourceTree = "<group>"; };
 		22EAA28319D0037F00E14C0B /* AutoCompleteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoCompleteCell.swift; path = Views/AutoCompleteCell.swift; sourceTree = "<group>"; };
 		243883827372488FB5ACC786 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		7D2B805019D227BA008A2378 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		7DCE95DC19C92C44003EE8AD /* yelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCE95E019C92C44003EE8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DCE95E119C92C44003EE8AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				7DCE95EA19C92C44003EE8AD /* LaunchScreen.xib */,
 				7DCE95DF19C92C44003EE8AD /* Supporting Files */,
 				2246C7E919CE810B00C90646 /* yelp-Bridging-Header.h */,
+				7D2B805019D227BA008A2378 /* Media.xcassets */,
 			);
 			path = yelp;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				22D70DD319D02AF300CA0B96 /* TemplateIcon2x.png in Resources */,
 				7DCE95E719C92C44003EE8AD /* Main.storyboard in Resources */,
+				7D2B805119D227BA008A2378 /* Media.xcassets in Resources */,
 				22D70DD219D02AF300CA0B96 /* Categories.json in Resources */,
 				7DCE95EC19C92C44003EE8AD /* LaunchScreen.xib in Resources */,
 				7DCE95E919C92C44003EE8AD /* Images.xcassets in Resources */,

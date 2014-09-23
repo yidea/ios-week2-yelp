@@ -156,7 +156,7 @@
                                             </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWr-zN-S2J">
-                                            <rect key="frame" x="14" y="11" width="40" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="40" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -164,7 +164,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="V2e-mv-DPs" firstAttribute="trailing" secondItem="D5Y-vv-RyY" secondAttribute="trailingMargin" id="0oW-Bn-7er"/>
-                                        <constraint firstItem="PWr-zN-S2J" firstAttribute="leading" secondItem="D5Y-vv-RyY" secondAttribute="leadingMargin" constant="6" id="1e1-BQ-F5y"/>
+                                        <constraint firstItem="PWr-zN-S2J" firstAttribute="leading" secondItem="D5Y-vv-RyY" secondAttribute="leadingMargin" constant="8" id="1e1-BQ-F5y"/>
                                         <constraint firstItem="V2e-mv-DPs" firstAttribute="top" secondItem="D5Y-vv-RyY" secondAttribute="topMargin" constant="-2" id="SGV-3L-Fxk"/>
                                         <constraint firstItem="PWr-zN-S2J" firstAttribute="top" secondItem="D5Y-vv-RyY" secondAttribute="topMargin" constant="3" id="bhl-AV-agk"/>
                                     </constraints>
@@ -180,31 +180,30 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cSL-U2-Vks" id="i0o-FB-tub">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpt-8c-ezC">
-                                            <rect key="frame" x="570" y="11" width="22" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="22" id="GRv-FQ-PKt"/>
-                                                <constraint firstAttribute="height" constant="22" id="Oht-5h-lbv"/>
-                                            </constraints>
-                                            <state key="normal">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icg-yp-PEx">
-                                            <rect key="frame" x="14" y="11" width="40" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="40" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-check" translatesAutoresizingMaskIntoConstraints="NO" id="jJZ-Tn-KBJ">
+                                            <rect key="frame" x="568" y="8" width="24" height="24"/>
+                                            <color key="tintColor" red="0.28047987443295103" green="0.83808169157608692" blue="0.30505290676538255" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="PLd-qu-XZo"/>
+                                                <constraint firstAttribute="height" constant="24" id="gsz-eI-XT6"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="jJZ-Tn-KBJ" firstAttribute="trailing" secondItem="i0o-FB-tub" secondAttribute="trailingMargin" id="4Ox-ZU-qYP"/>
+                                        <constraint firstItem="jJZ-Tn-KBJ" firstAttribute="top" secondItem="i0o-FB-tub" secondAttribute="topMargin" id="Rut-6s-VHj"/>
                                         <constraint firstItem="icg-yp-PEx" firstAttribute="top" secondItem="i0o-FB-tub" secondAttribute="topMargin" constant="3" id="Tvl-Ag-EEb"/>
-                                        <constraint firstItem="dpt-8c-ezC" firstAttribute="trailing" secondItem="i0o-FB-tub" secondAttribute="trailingMargin" id="mi6-UV-CMO"/>
-                                        <constraint firstItem="dpt-8c-ezC" firstAttribute="top" secondItem="i0o-FB-tub" secondAttribute="topMargin" constant="3" id="wwr-c2-hgU"/>
-                                        <constraint firstItem="icg-yp-PEx" firstAttribute="leading" secondItem="i0o-FB-tub" secondAttribute="leadingMargin" constant="6" id="zno-pB-KwF"/>
+                                        <constraint firstItem="icg-yp-PEx" firstAttribute="leading" secondItem="i0o-FB-tub" secondAttribute="leadingMargin" constant="8" id="zno-pB-KwF"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="checkIcon" destination="jJZ-Tn-KBJ" id="7Z8-CC-ZIZ"/>
                                     <outlet property="name" destination="icg-yp-PEx" id="psv-pb-gRa"/>
                                 </connections>
                             </tableViewCell>
@@ -217,11 +216,13 @@
                     <navigationItem key="navigationItem" title="Filters" id="QDM-UR-5Wi">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="hgA-fF-9TL"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ELl-kr-ECR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onCancelClick:" destination="JPq-2E-k6B" id="qgM-2P-fur"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Search" id="4Sw-sX-ALX">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onSearchClick:" destination="JPq-2E-k6B" id="CAb-Lj-dge"/>
                             </connections>
@@ -280,14 +281,15 @@
             </objects>
             <point key="canvasLocation" x="1948" y="1275"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="X8o-Ov-IkM">
             <objects>
                 <navigationController id="Dic-Ep-eJf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="EPz-Tn-m1d"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="icon-search" id="EPz-Tn-m1d"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="o5F-gW-OG7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.83808169157608692" green="0.23265224282072638" blue="0.14820655358344756" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="RIy-Ag-SUc" kind="relationship" relationship="rootViewController" id="7jC-q6-7d9"/>
@@ -324,6 +326,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="agh-X2-K1k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.83921568627450982" green="0.23137254901960785" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -334,4 +337,8 @@
             <point key="canvasLocation" x="2754" y="584"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-check" width="24" height="24"/>
+        <image name="icon-search" width="24" height="24"/>
+    </resources>
 </document>
