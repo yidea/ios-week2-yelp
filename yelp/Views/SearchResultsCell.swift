@@ -19,7 +19,8 @@ class SearchResultsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        thumb.layer.cornerRadius = thumb.frame.size.width / 2;
+        thumb.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -29,7 +30,7 @@ class SearchResultsCell: UITableViewCell {
     }
     
     func forBusiness(biz: Business) {
-        titleCell.text = biz.name + " SUPER LONG TEXT FIELD"
+        titleCell.text = biz.name
         reviews.text = biz.reviewFormatted
         categories.text = biz.categoriesFormatted
         if biz.thumbUrl != nil {
