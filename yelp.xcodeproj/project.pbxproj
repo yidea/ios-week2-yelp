@@ -23,6 +23,7 @@
 		22EAA28219CFFF1000E14C0B /* AutoCompleteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAA28119CFFF1000E14C0B /* AutoCompleteTableViewController.swift */; };
 		22EAA28419D0037F00E14C0B /* AutoCompleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAA28319D0037F00E14C0B /* AutoCompleteCell.swift */; };
 		7D2B805119D227BA008A2378 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D2B805019D227BA008A2378 /* Media.xcassets */; };
+		7D2B805319D2380A008A2378 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2B805219D2380A008A2378 /* SearchController.swift */; };
 		7DCE95E219C92C44003EE8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE95E119C92C44003EE8AD /* AppDelegate.swift */; };
 		7DCE95E719C92C44003EE8AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCE95E519C92C44003EE8AD /* Main.storyboard */; };
 		7DCE95E919C92C44003EE8AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCE95E819C92C44003EE8AD /* Images.xcassets */; };
@@ -58,6 +59,7 @@
 		22EAA28319D0037F00E14C0B /* AutoCompleteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoCompleteCell.swift; path = Views/AutoCompleteCell.swift; sourceTree = "<group>"; };
 		243883827372488FB5ACC786 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7D2B805019D227BA008A2378 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		7D2B805219D2380A008A2378 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = ViewControllers/SearchController.swift; sourceTree = "<group>"; };
 		7DCE95DC19C92C44003EE8AD /* yelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCE95E019C92C44003EE8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DCE95E119C92C44003EE8AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				2246C7FC19CFCF3500C90646 /* SearchResultsViewController.swift */,
 				22EAA28119CFFF1000E14C0B /* AutoCompleteTableViewController.swift */,
 				223F010519D10D51003E68CD /* FilterViewController.swift */,
+				7D2B805219D2380A008A2378 /* SearchController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				2246C7F219CE853400C90646 /* YelpClient.swift in Sources */,
 				22EAA28219CFFF1000E14C0B /* AutoCompleteTableViewController.swift in Sources */,
 				22EAA28019CFF79800E14C0B /* SearchResultsCell.swift in Sources */,
+				7D2B805319D2380A008A2378 /* SearchController.swift in Sources */,
 				226329BA19D144550065A997 /* SelectFilterCell.swift in Sources */,
 				223F010619D10D51003E68CD /* FilterViewController.swift in Sources */,
 				223F010A19D1119C003E68CD /* Filters.swift in Sources */,

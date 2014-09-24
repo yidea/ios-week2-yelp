@@ -80,8 +80,6 @@ class FilterViewController: UITableViewController {
             }
         }
         
-
-        
         //now persist the one that has just been selected
         s.filters[indexPath.row].selected = true
         tableView.reloadData()

@@ -13,7 +13,8 @@ class AutoCompleteTableViewController: UITableViewController, UISearchResultsUpd
     var searchArray = [String]()
     let yelpClient = YelpClient()
     var viewController = SearchResultsViewController()
-    var searchController = UISearchController()
+    var searchController: SearchController?
+    var searchTerm = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +42,26 @@ class AutoCompleteTableViewController: UITableViewController, UISearchResultsUpd
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let searchTerm = searchArray[indexPath.row]
-        searchController.searchBar.text = searchTerm
+        searchController!.updateText(searchTerm)
+        updateSearchResultsForSearchController(searchController!)
+        println(__FUNCTION__)
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        updateSearchResultsForSearchController(searchController!)
+        viewController.view.addSubview(self.tableView)
         tableView.hidden = false
     }
     
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        searchTerm = searchText
+        updateSearchResultsForSearchController(searchController!)
+    }
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        println(searchController.searchBar.text)
-        viewController.forSearchTerm(searchController.searchBar.text, filters: nil)
+        println(searchController!.searchBar.text)
+        viewController.forSearchTerm(searchController!.searchBar.text, filters: nil)
+        searchController?.searchBar.resignFirstResponder()
         tableView.hidden = true
     }
     
@@ -59,11 +70,11 @@ class AutoCompleteTableViewController: UITableViewController, UISearchResultsUpd
         if let indexPath = tableView.indexPathForSelectedRow() {
             tableView.deselectRowAtIndexPath(indexPath, animated: false)
         } else {
-            self.searchController = searchController
-            var searchTerm = searchController.searchBar.text
             
-            if (searchTerm != "") {
+            if (self.searchTerm != "") {
+                println(searchTerm)
                 yelpClient.search(searchTerm, { (data: Array<String>) in
+                    println(data)
                     self.searchArray += data
                 })
             }

@@ -1,4 +1,9 @@
 # Yelp
+
+Completion time: **23 hours**
+
+![](https://github.com/sjmueller/ios-rotten/blob/master/ios-week2-yelp.gif)
+
 ### Search results page
 - [x] Table rows should be dynamic height according to the content height
 - [x] Custom cells should have the proper Auto Layout constraints
@@ -15,7 +20,8 @@
 - [x] The filters table should be organized into sections as in the mock.
 - [x] You can use the default UISwitch for on/off states. Optional: implement a custom switch
 - [x] Radius filter should expand as in the real Yelp app
-- [ ] Categories should show a subset of the full list with a "See All" row to expand. Category list is here: http://www.yelp.com/developers/documentation/category_list (Links to an external site.)
+- [X] Categories should show a subset of the full list with a "See All" row to expand. Category list is here: http://www.yelp.com/developers/documentation/category_list (Links to an external site.)
+*Category functionality was implemented with autocomplete, and expansion implemented with sort and radius)*
 - [x] Clicking on the "Search" button should dismiss the filters page and trigger the search w/ the new filter settings.
 
 **Optional**
@@ -25,3 +31,5 @@
 ## Other Optional Explorations
 
 - [x] Autocomplete that suggests categories
+- [x] Load filter configuration from embedded json
+- [x] Vector icons using new to xcode 6 and ios8

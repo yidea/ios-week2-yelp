@@ -14,7 +14,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var filterBar: UIView!
     var searchResults = [Business]()
-    var searchController = UISearchController()
+    var searchController = SearchController()
     let yelpClient = YelpClient()
     var currentSearchTerm = ""
     
@@ -30,7 +30,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
             let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let autocompleteController = storyBoard.instantiateViewControllerWithIdentifier("AutoCompleteViewController") as AutoCompleteTableViewController
             autocompleteController.viewController = self
-            let controller = UISearchController(searchResultsController: autocompleteController)
+            let controller = SearchController(searchResultsController: autocompleteController)
+            autocompleteController.searchController = controller
             controller.searchResultsUpdater = autocompleteController
             controller.hidesNavigationBarDuringPresentation = false
             controller.dimsBackgroundDuringPresentation = false
