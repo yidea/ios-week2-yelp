@@ -2,7 +2,7 @@
 
 Completion time: **23 hours**
 
-![](https://github.com/sjmueller/ios-rotten/blob/master/ios-week2-yelp.gif)
+![](https://github.com/sjmueller/ios-week2-yelp/blob/master/ios-week2-yelp.gif)
 
 ### Search results page
 - [x] Table rows should be dynamic height according to the content height
