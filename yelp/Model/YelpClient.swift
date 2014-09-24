@@ -95,9 +95,11 @@ class YelpClient: BDBOAuth1SessionManager {
                         
                         var categories = [String]()
                         //extract categories from nested arrays
-                        let catArray = hash[keys.categoriesKey]! as [NSArray]
-                        for catSubarray in catArray {
-                            categories.append(catSubarray[0] as NSString)
+                        if hash[keys.categoriesKey] != nil {
+                            let catArray = hash[keys.categoriesKey]! as [NSArray]
+                            for catSubarray in catArray {
+                                categories.append(catSubarray[0] as NSString)
+                            }
                         }
                         
                         var business = Business(
